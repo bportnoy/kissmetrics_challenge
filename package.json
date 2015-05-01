@@ -9,7 +9,11 @@
   "author": "Bradley Portnoy <bp@bradleyportnoy.com> (http://www.bradleyportnoy.com)",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^2.9.25",
+    "body-parser": "^1.12.3",
+    "csv-parse": "^0.1.1",
     "express": "^4.12.3",
+    "lodash": "^3.7.0",
     "moment": "^2.10.2",
     "morgan": "^1.5.2",
     "twix": "^0.6.3"
