@@ -20,8 +20,6 @@ var api = function(req, res){
   delete query.duration;
   delete query.full;
 
-  console.log(req.query);
-
   try{
 
     //moment really doesn't like strings to set the date object
@@ -31,9 +29,7 @@ var api = function(req, res){
 
     momentObject = moment().set(query);
     //if there's no date, we want the last day of the month
-    console.log(momentObject.toString());
-    if (!query.date) momentObject.endOf('month');
-    console.log(momentObject.toString());
+    if (!query.date) momentObject.startOf('month');
 
   } catch (err){
     res.status(400).send('Invalid query string.');

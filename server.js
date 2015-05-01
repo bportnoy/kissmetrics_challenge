@@ -7,8 +7,6 @@ var router = require('./routes');
 
 var app = express();
 
-console.log(process.env.NODE_ENV);
-
 //load bodyparser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,7 +19,7 @@ app.set('port', 8000);
 
 app.use(router);
 
-
+//read the data, then begin listening
 dataStore.readCSV().then(function(success){
   if (success){
     app.listen(app.get('port'), function() {
