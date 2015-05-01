@@ -28,9 +28,12 @@ var dataStore = {
   },
 
   getMetric: function(metricId, start_date, time_range_length) {
+    
     var metricArray = data[metricId];
+
     metricArray = _.filter(metricArray, {start_date: start_date.toString(),
                                             time_range_length: time_range_length.toString()});
+
     return metricArray.length ? metricArray[0] : undefined;
   }
 

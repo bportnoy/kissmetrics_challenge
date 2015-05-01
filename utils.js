@@ -8,10 +8,6 @@ var february1 = moment().year(2009).month(1).startOf('month');
 
 var utils = {
 
-  fetchDataByPeriod: function(metricId, dateObject) {
-
-  },
-
   //takes a moment.js object an converts it to JohnTime. Returns undefined if the moment is before the JohnTime epoch.
   toJohnTime: function(momentObject) {
     if (momentObject.isBefore(johnEpoch)) return undefined;
@@ -23,11 +19,11 @@ var utils = {
     var jeClone = johnEpoch.clone();
     jeClone.add(days-1, 'days');
     return jeClone;
-  },
-
+  }
 
 };
 
 
 module.exports = utils;
 
+console.log(utils.fromJohnTime(2281).toString());
